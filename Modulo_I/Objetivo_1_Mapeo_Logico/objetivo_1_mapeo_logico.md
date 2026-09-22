@@ -2,7 +2,7 @@
 ## Aplicación web seleccionada
 **Gran Rifa 2019** — laboratorio de la plataforma Software Seguro.
 
-## Diagrama de flujo del dato
+## Diagrama de flujo
 
 ```
 [Usuario] --(mismo dispositivo)--> [Frontend]
