@@ -1,4 +1,4 @@
-# Objetivo 1: Mapeo de Arquitectura Lógica
+# Objetivo 1: Mapeo Logico
 
 ## Aplicación web seleccionada
 **OWASP Juice Shop** — aplicación web deliberadamente vulnerable, pensada para entrenamiento de seguridad ofensiva, que expone una arquitectura típica de una app moderna: frontend en Angular, backend en Node.js/Express y base de datos SQLite.
