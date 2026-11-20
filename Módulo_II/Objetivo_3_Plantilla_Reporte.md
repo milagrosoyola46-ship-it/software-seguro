@@ -1,6 +1,6 @@
 # Plantilla de Reporte de Pentesting
 
-> Plantilla reutilizable para reportar hallazgos de pentesting / auditorías de seguridad.
+> Plantilla reutilizable para reportar hallazgos de pentesting.
 
 ---
 
