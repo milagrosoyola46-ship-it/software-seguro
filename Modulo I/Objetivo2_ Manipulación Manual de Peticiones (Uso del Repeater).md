@@ -1,6 +1,6 @@
 # Objetivo 2: Manipulación Manual de Peticiones (Uso del Repeater)
 
-**Laboratorio que use:** Gran Rifa 2019
+**Laboratorio:** Gran Rifa 2019
 
 ## Interceptación de la petición original
 
