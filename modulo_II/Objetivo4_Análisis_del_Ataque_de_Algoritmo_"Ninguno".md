@@ -58,6 +58,6 @@ Esta misma clase de problema (confusión de algoritmo) tiene otras variantes con
 - El servidor **nunca debe leer el algoritmo desde el token** para decidir cómo verificarlo. Debe tener **hardcodeado/configurado de antemano** qué algoritmo(s) espera (ej: "solo acepto HS256" o "solo acepto RS256") y rechazar cualquier token que declare un algoritmo distinto, incluyendo `"none"`.
 - La mayoría de las librerías modernas de JWT ya corrigieron este problema por defecto, pero sigue siendo responsabilidad de quien integra la librería especificar explícitamente el/los algoritmo(s) permitido(s) al momento de verificar (allowlist), y no dejar ese parámetro librado al token recibido.
 
-## 6. Conclusión
+## Conclusión
 
 El ataque de algoritmo `"none"` es crítico porque convierte un mecanismo pensado para garantizar integridad (la firma del JWT) en papel mojado: si el backend confía en el `alg` que el propio atacante puede escribir, cualquiera puede emitir tokens arbitrarios — con cualquier usuario, rol o permiso, sin fecha de expiración forzada por falta de validación, y sin necesidad de romper ni conocer la clave secreta del servidor, porque esa clave nunca llega a usarse en la verificación.
