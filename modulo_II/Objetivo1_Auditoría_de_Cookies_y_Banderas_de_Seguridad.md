@@ -16,7 +16,7 @@ Cookie de sesión principal: **`user_session`** (también `logged_in`, `_gh_sess
 | _gh_sess | ✓ | ✓ | Strict |
 | dotcom_user | ✗ | ✓ | Lax |
 
-las cookies de sesión/autenticación están correctamente protegidas con `HttpOnly` y `Secure`. La cookie `dotcom_user` (solo guarda el username, no es la de sesión) no tiene `HttpOnly`, pero el riesgo es menor al no ser un token de autenticación.
+las cookies de sesión están correctamente protegidas con `HttpOnly` y `Secure`. La cookie `dotcom_user` (solo guarda el username, no es la de sesión) no tiene `HttpOnly`, pero el riesgo es menor al no ser un token de autenticación.
 
 ## Classroom 
 
