@@ -2,7 +2,7 @@
 
 ## Por qué las "listas negras" (blacklisting) fracasan
 
-El enfoque intuitivo de muchos desarrolladores novatos es tratar la inyección SQL como un problema de "texto prohibido": bloquear palabras como `SELECT`, `UNION`, `DROP`, o escapar comillas simples (`'` → `\'`). Esto falla estructuralmente por varias razones:
+El enfoque intuitivo de muchos desarrolladores es tratar la inyección SQL como un problema de "texto prohibido": bloquear palabras como `SELECT`, `UNION`, `DROP`, o escapar comillas simples (`'` → `\'`). Esto falla estructuralmente por varias razones:
 
 - **Es una lista de lo conocido, no de lo posible.** Siempre existe una forma de reescribir un payload que no esté en la lista: usar mayúsculas/minúsculas mezcladas (`SeLeCt`), comentarios inline para partir la palabra (`UN/**/ION`), codificaciones alternativas (hex, Unicode), o sinónimos funcionales del motor de base de datos que logran el mismo efecto sin usar la palabra bloqueada.
 - **Escapar comillas no cubre todos los contextos de inyección.** Si el dato se inserta en un contexto numérico (`WHERE id = 5` sin comillas), escapar comillas no sirve de nada — el atacante ni siquiera necesita usar una comilla para inyectar (`id=5 OR 1=1`).
