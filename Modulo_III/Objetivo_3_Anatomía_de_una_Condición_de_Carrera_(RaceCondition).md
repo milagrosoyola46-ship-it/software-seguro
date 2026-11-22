@@ -1,6 +1,6 @@
 # Objetivo 3: Anatomía de una Condición de Carrera (Race Condition)
 
-## El problema de fondo: TOCTOU (Time-Of-Check to Time-Of-Use)
+## TOCTOU (Time-Of-Check to Time-Of-Use)
 
 Una condición de carrera en seguridad web ocurre porque casi toda operación "segura" en apariencia en realidad se ejecuta en **dos pasos separados en el tiempo**, no como una sola operación atómica:
 
@@ -15,7 +15,7 @@ En condiciones normales (un usuario común, haciendo click una vez), esta ventan
 
 Acá es donde entra **Turbo Intruder** (una extensión de Burp Suite pensada específicamente para esto, a diferencia del Intruder clásico que envía peticiones de forma más espaciada): permite enviar una ráfaga de peticiones **casi simultáneas**, abriendo muchas conexiones en paralelo y minimizando el tiempo entre el envío de cada una, en vez de esperar la respuesta de una antes de mandar la siguiente (que es como funciona una navegación normal o incluso el Intruder clásico en su modo por defecto).
 
-### El flujo del ataque, paso a paso:
+### El flujo del ataque:
 
 1. El atacante identifica un endpoint de canje de código de descuento (por ejemplo, `POST /api/cupon/canjear` con `{"codigo": "DESCUENTO50"}`), confirmando primero con una petición normal que el código es válido y de **un solo uso**.
 2. Usando Turbo Intruder, el atacante configura un script que envía, por ejemplo, **50 copias idénticas** de esa misma petición de canje, todas con el mismo código, disparadas en el menor tiempo posible entre sí (Turbo Intruder usa su propio motor HTTP de bajo nivel para lograr esto, evitando los cuellos de botella de conexión que tendría una herramienta más genérica).
